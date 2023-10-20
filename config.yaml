@@ -25,4 +25,5 @@ vectoriser_config:
 model_config:
   type: 1
   onevsrest: true
+  max_iter : 50
   output_path : models/

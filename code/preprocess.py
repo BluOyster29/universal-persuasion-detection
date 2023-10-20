@@ -251,8 +251,7 @@ def tag_to_vec(tag: str, tag2idx: dict, top_level_only: bool=None) -> str:
     return empty_vec
 
 
-def chooze_vectorizer(vec_type: int, lowercase: bool =None, 
-                     stop_words: str=None, ngram_range: tuple=None):
+def chooze_vectorizer(vec_type: int ,stop_words: str=None, ngram_range: tuple=None):
     
     """
     SCript takes the config for the vectorizer and returns 
@@ -281,12 +280,12 @@ def chooze_vectorizer(vec_type: int, lowercase: bool =None,
     # count vectorizer uses word frequencies to populate vectors
     if vec_type == 1:
         vec_name = 'count'
-        vectorizer = CountVectorizer(lowercase=lowercase, ngram_range=ngram_range,
+        vectorizer = CountVectorizer(lowercase=True, ngram_range=ngram_range,
                                     stop_words=stop_words)
         
     # tfidf vectorizers uses tfidf representation
     elif vec_type == 2:
-        vectorizer = TfidfVectorizer(lowercase=lowercase, ngram_range=ngram_range,
+        vectorizer = TfidfVectorizer(lowercase=True, ngram_range=ngram_range,
                                     stop_words=stop_words)
         vec_name = 'tfidf'
         
@@ -303,7 +302,6 @@ def get_vectorizer(config : dict):
     vectorizer_config = config.get('vectoriser_config')
 
     vectorizer_name, vectorizer = chooze_vectorizer(vec_type=vectorizer_config.get('type'), 
-                                        lowercase=vectorizer_config.get('lower'), 
                                         ngram_range=ast.literal_eval(vectorizer_config.get('ngram_range')),
                                         stop_words=vectorizer_config.get('stop_words'))
 
