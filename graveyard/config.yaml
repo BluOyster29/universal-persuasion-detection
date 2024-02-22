@@ -1,0 +1,29 @@
+suppliment_testing: 200
+taglist:
+  is_persuasion : 0
+  # 2-NEGOTIATE: 1
+  # 3-EMOTION: 2
+  # 4-LOGIC: 3
+  # 5-AUTHORITY: 4
+  # 6-SOCIAL: 5
+  # 7-PRESSURE: 6
+  # 8-NO-PERSUASION: 7
+  # NO-TAG: 8
+testing_data:
+  conf_threshold: 0.6
+  output_path: data/dataloaders/
+  path: data/post_processed/testing_data.jsonl
+training_data:
+  conf_threshold: 0.5
+  output_path: data/dataloaders/
+  path: data/post_processed/training_data.jsonl
+vectoriser_config:
+  type: 1
+  lowercase: true
+  ngram_range: (1,1)
+  stop_words: english
+model_config:
+  type: 1
+  onevsrest: true
+  max_iter : 100
+  output_path : models/

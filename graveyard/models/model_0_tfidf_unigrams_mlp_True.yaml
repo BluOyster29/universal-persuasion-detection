@@ -1,0 +1,98 @@
+classification_report:
+  1-RAPPORT:
+    f1-score: 0.7643742953776776
+    precision: 0.7197452229299363
+    recall: 0.8149038461538461
+    support: 832.0
+  2-NEGOTIATE:
+    f1-score: 0.49429657794676807
+    precision: 0.33505154639175255
+    recall: 0.9420289855072463
+    support: 138.0
+  3-EMOTION:
+    f1-score: 0.3404255319148936
+    precision: 0.2127659574468085
+    recall: 0.851063829787234
+    support: 94.0
+  4-LOGIC:
+    f1-score: 0.04347826086956522
+    precision: 0.024390243902439025
+    recall: 0.2
+    support: 20.0
+  5-AUTHORITY:
+    f1-score: 0.30508474576271183
+    precision: 0.1875
+    recall: 0.8181818181818182
+    support: 22.0
+  6-SOCIAL:
+    f1-score: 1.0
+    precision: 0.0
+    recall: 0.0
+    support: 2.0
+  7-PRESSURE:
+    f1-score: 0.0
+    precision: 0.0
+    recall: 1.0
+    support: 0.0
+  8-NO-PERSUASION:
+    f1-score: 0.23064250411861614
+    precision: 0.1303538175046555
+    recall: 1.0
+    support: 140.0
+  NO-TAG:
+    f1-score: 1.0
+    precision: 1.0
+    recall: 1.0
+    support: 0.0
+  macro avg:
+    f1-score: 0.46425576844335914
+    precision: 0.2899785320195102
+    recall: 0.7362420532922384
+    support: 1248.0
+  micro avg:
+    f1-score: 0.46937863209655784
+    precision: 0.3254804711717297
+    recall: 0.8413461538461539
+    support: 1248.0
+  samples avg:
+    f1-score: 0.6064064064064064
+    precision: 0.3675675675675676
+    recall: 0.8656156156156156
+    support: 1248.0
+  weighted avg:
+    f1-score: 0.6234324693202397
+    precision: 0.551223940872171
+    recall: 0.8413461538461539
+    support: 1248.0
+model_config:
+  max_iter: 50
+  onevsrest: true
+  output_path: models/
+  type: 1
+num_testing: 1332
+num_training: 6550
+suppliment_testing: 0
+taglist:
+  1-RAPPORT: 0
+  2-NEGOTIATE: 1
+  3-EMOTION: 2
+  4-LOGIC: 3
+  5-AUTHORITY: 4
+  6-SOCIAL: 5
+  7-PRESSURE: 6
+  8-NO-PERSUASION: 7
+  NO-TAG: 8
+testing_data:
+  conf_threshold: 0.6
+  output_path: data/dataloaders/
+  path: data/post_processed/testing_data.jsonl
+time: 14-02-2024 15:43
+training_data:
+  conf_threshold: 0.5
+  output_path: data/dataloaders/
+  path: data/post_processed/training_data.jsonl
+vectoriser_config:
+  lowercase: true
+  ngram_range: (1,1)
+  stop_words: english
+  type: 2
